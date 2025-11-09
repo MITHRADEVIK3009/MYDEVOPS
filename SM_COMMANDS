@@ -1,0 +1,123 @@
+#  Super Memory - Shell Command Equivalents
+
+---
+
+## 1. Memory Initialization & Setup
+
+| Command | Description |
+|----------|-------------|
+| `mkdir -p ~/.supermemory` | Create a folder to store memory data. |
+| `touch ~/.supermemory/config.json` | Initialize your memory configuration file. |
+| `git init ~/.supermemory` | Version control for stored memory. |
+| `echo "project:default" > ~/.supermemory/context` | Define a default active context. |
+| `cat ~/.supermemory/context` | Display the current memory context. |
+
+---
+
+## 2. Storing Information (Persistent Notes)
+
+| Command | Description |
+|----------|-------------|
+| `echo "DB_URL=postgres://localhost" >> ~/.supermemory/dev.env` | Store environment data. |
+| `echo "Last deployment: $(date)" >> ~/.supermemory/log.txt` | Log timestamped memory. |
+| `history | tail -n 50 > ~/.supermemory/commands.log` | Save recent commands for recall. |
+| `git -C ~/.supermemory add . && git -C ~/.supermemory commit -m "Snapshot"` | Commit new memory state. |
+| `cp ~/.bash_history ~/.supermemory/history_backup.txt` | Backup memory of shell history. |
+
+---
+
+## 3. Retrieving & Searching Memory
+
+| Command | Description |
+|----------|-------------|
+| `grep "DB_URL" ~/.supermemory/dev.env` | Find specific key from stored env. |
+| `cat ~/.supermemory/log.txt | tail -n 10` | Recall last few events. |
+| `find ~/.supermemory -type f -name "*.env"` | Search for environment memory files. |
+| `git -C ~/.supermemory log --oneline` | View all saved memory commits. |
+| `grep -r "docker" ~/.supermemory` | Search memory for all mentions of docker. |
+
+---
+
+## 4. Clearing & Resetting
+
+| Command | Description |
+|----------|-------------|
+| `rm ~/.supermemory/*.log` | Delete log memories. |
+| `truncate -s 0 ~/.supermemory/dev.env` | Clear environment memory file. |
+| `git -C ~/.supermemory reset --hard HEAD~1` | Undo last memory commit. |
+| `rm -rf ~/.supermemory/archive` | Remove archived memory folder. |
+| `cp /dev/null ~/.supermemory/context` | Reset active context pointer. |
+
+---
+
+## 5.  Context Switching (Project Memory)
+
+| Command | Description |
+|----------|-------------|
+| `echo "project:webapp" > ~/.supermemory/context` | Switch to a new context. |
+| `cat ~/.supermemory/context` | Verify active project memory. |
+| `ln -sf ~/.supermemory/webapp.env .env` | Link current project’s environment memory. |
+| `direnv allow` | Auto-load `.envrc` memory on directory switch. |
+| `tmux new -s webapp` | Create a terminal “memory session” per project. |
+
+---
+
+## 6.  Integration with Other Tools
+
+| Command | Description |
+|----------|-------------|
+| `docker inspect mycontainer > ~/.supermemory/docker_state.json` | Store Docker container state. |
+| `poetry show --tree > ~/.supermemory/poetry_deps.txt` | Record project dependency tree. |
+| `pytest --maxfail=1 -q | tee ~/.supermemory/test_results.log` | Save test outcomes. |
+| `kubectl get pods -A > ~/.supermemory/k8s_snapshot.txt` | Capture current cluster state. |
+| `gh pr list > ~/.supermemory/github_prs.txt` | Save all PRs for context recall. |
+
+---
+
+## 7. Security & Access Control
+
+| Command | Description |
+|----------|-------------|
+| `gpg -c ~/.supermemory/dev.env` | Encrypt sensitive memory data. |
+| `gpg -d ~/.supermemory/dev.env.gpg` | Decrypt memory for use. |
+| `chmod 600 ~/.supermemory/*` | Restrict access to memory files. |
+| `ls -lh ~/.supermemory` | Inspect secure memory files. |
+| `git -C ~/.supermemory log --author=<user>` | Audit who modified memory. |
+
+---
+
+## 8. Cognitive Layer (Smart Recall / Summarization)
+
+| Command | Description |
+|----------|-------------|
+| `cat ~/.supermemory/log.txt | tail -n 20 | awk '{print $1, $2, $3}'` | Quick summary of memory events. |
+| `jq '. | keys' ~/.supermemory/config.json` | Summarize stored keys in JSON. |
+| `awk '{print $2}' ~/.supermemory/commands.log | sort | uniq -c | sort -nr` | Find most used commands. |
+| `grep -r "error" ~/.supermemory` | Recall failure-related patterns. |
+| `wc -l ~/.supermemory/*` | Get count of total memory entries. |
+
+---
+
+## 9.  Versioning & Snapshots
+
+| Command | Description |
+|----------|-------------|
+| `git -C ~/.supermemory add . && git -C ~/.supermemory commit -m "Snapshot $(date)"` | Save memory state. |
+| `git -C ~/.supermemory tag v1.0-memory` | Tag a specific memory version. |
+| `git -C ~/.supermemory checkout v1.0-memory` | Restore an old memory version. |
+| `git -C ~/.supermemory log --stat` | View all memory version changes. |
+| `tar -czf ~/memory_backup_$(date +%F).tar.gz ~/.supermemory` | Backup memory folder. |
+
+---
+
+## 10. Memory Insights & Optimization
+
+| Command | Description |
+|----------|-------------|
+| `du -sh ~/.supermemory` | Check memory size. |
+| `find ~/.supermemory -type f | wc -l` | Count total stored entries. |
+| `grep -r "TODO" ~/.supermemory | wc -l` | Count pending reminders. |
+| `git -C ~/.supermemory gc` | Optimize Git storage of memory. |
+| `ls -lt ~/.supermemory | head` | Find most recently updated memories. |
+
+---
